@@ -15,7 +15,7 @@ dp = Dispatcher()
 # Обработчик команды /start
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    user_name = message.from_user.first_name
+    user_name = message.from_user.first_name or "друг"
     await message.answer(f"Привет, {user_name}! Я СтройКазначей. Я помогу тебе не уйти в минус.")
 
 # Обработчик любого другого текста
